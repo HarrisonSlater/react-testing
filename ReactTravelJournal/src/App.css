@@ -1,0 +1,92 @@
+
+@media only screen and (max-width: 450px) {
+    body {
+        font-size: 0.8em; /*haven' tested this on real devices */
+    }
+}
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+}
+
+header {
+    height:3.5rem;
+    padding-top: 1rem;
+
+    padding-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+
+    background-color: #F55A5A;
+    margin-bottom: 2rem;
+}
+header img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+}
+
+header * {
+    font-size:1.2em;
+    display:inline-block;
+    color: white;
+}
+
+.entry {
+    display: flexbox;
+    width: calc((478/16)*1em);
+    margin: auto;
+
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+.entry:not(:last-child) {
+    border-bottom:#F5F5F5 1px solid;
+}
+
+.entry-image {
+    width: 7.8em;
+}
+
+.entry-wrapper {
+    vertical-align: bottom;
+    padding: 4%;
+    width:60%;
+    display: inline-block;
+}
+.entry-map-marker {
+
+    height: 1em;
+    margin-right: 0.5em;
+}
+.entry-country {
+
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+}
+
+.entry-map-link {
+    padding-left: 1em;
+    color: #918E9B;
+
+}
+.entry-header{
+    font-size:0.6em;
+    padding:0;
+    margin:0;
+    align-items: center;
+    display: flex;
+}
+.entry-title {
+    margin-top:0.2em;
+}
+
+.entry-date {
+    font-weight: bold;
+}
+.entry-date, .entry-text {
+    font-size: 0.5em;
+}
