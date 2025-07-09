@@ -6,7 +6,7 @@ import data from "./data.js";
     //const entries = data.map(({country, title, dates, text, img, googleMapsLink}) => {
 export default function App() {
     const entries = data.map((props) => {
-        return <Entry key={props.id} props={props}/>
+        return <Entry key={props.id} {...props}/>
     });
 
   return (

@@ -1,4 +1,4 @@
-export default function Entry({props}) {
+export default function Entry(props) {
   const {country, title, date, text, img, googleMapsLink} = props;
   console.log(props);
   return (
