@@ -179,6 +179,7 @@ main ul li::before {
 .left-container .details-container .detail:nth-child(1):before {
     margin-right: 1em;
     content: url("/src/assets/business-card/icon-phone.svg");
+    
 }
 
 .left-container .details-container .detail:nth-child(2):before {

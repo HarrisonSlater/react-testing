@@ -1,32 +1,32 @@
 /* Inital design by https://www.figma.com/community/file/1134435607082521788/business-card-design */
 
-export default function BusinessCard() {
+export default function BusinessCard(props) {
     return (
-        <div class="business-card-container">
+        <div class="business-card-container" style={props.style}>
             <section class="business-card">
                 <div class="business-card-content" >
                     {/* <img src="/src/assets/business-card/backing-curve-blue.svg" draggable="false" select/> */}
                     <div class="left-container">
                         <div class="name-container">
-                            <span class="name">John Doe</span>
-                            <span class="role">Designer</span>
+                            <span class="name">{props.name}</span>
+                            <span class="role">{props.role}</span>
                         </div>
                         <div class="details-container">
                             <div class="detail">
-                                <span>000-123-456-7890</span>
+                                <span>{props.phone}</span>
                             </div>
                             <div class="detail">
-                                <span>email@yourdomain.com</span>
+                                <span>{props.email}</span>
                             </div>
                             <div class="detail">
-                                <span>Your address goes here 125 Street, USA</span>
+                                <span>{props.address}</span>
                             </div>
                         </div>
                     </div>
                     <div class="logo-container">
-                        <img class="company-logo" src="/src/assets/business-card/logo.svg"/>
-                        <span class="company-name">Company Name</span>
-                        <span class="company-tagline">Your tagline here</span>
+                        <img class="company-logo" src={props.companyLogo}/>
+                        <span class="company-name">{props.companyName}</span>
+                        <span class="company-tagline">{props.companyTagline}</span>
                     </div>
                 </div>
 
