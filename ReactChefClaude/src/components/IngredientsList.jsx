@@ -1,10 +1,10 @@
 
 export default function IngredientsList({ingredients, recipeCallback}) {
-    let ingredientsList = ingredients.map(i => <li>{i}</li>)
+    let ingredientsList = ingredients.map(i => <li key={i}>{i}</li>)
 
     return (
         <>
-            { ingredients.length > 3 &&
+            { ingredients.length != 0 &&
                 <section>
                     <h2>Ingredients on hand:</h2>
                     <ul className="ingredients-list" aria-live="polite">{ingredientsList}</ul>

@@ -1,11 +1,14 @@
 import React from 'react';
 import ClaudeRecipe from './ClaudeRecipe';
 import IngredientsList from './IngredientsList';
+import { getRecipeFromGemini } from "../ai"
+
+
 export default function Main() {
 
     let [ingredients, setIngredients] = React.useState([]);
     let [recipeShown, setRecipeShown] = React.useState(false);
-    console.log(import.meta.env.VITE_ENV_TEST)
+    let [recipeGenerated, setRecipeGenerated] = React.useState("Recipe not yet generated...");
 
     function handleSubmit(formData) {
       let newIngredient = formData.get("ingredient")
@@ -13,7 +16,13 @@ export default function Main() {
     }
 
     function clickGetRecipe() {
-      setRecipeShown(true)
+      getRecipeFromGemini(ingredients).then(result => {
+          console.log(result);
+          let recipe = result.text;
+
+          setRecipeGenerated(recipe);
+          setRecipeShown(true);
+      });
     }
 
   return (
@@ -30,7 +39,7 @@ export default function Main() {
       <IngredientsList ingredients={ingredients} recipeCallback={clickGetRecipe} />
 
       { recipeShown &&
-        <ClaudeRecipe />
+        <ClaudeRecipe text={recipeGenerated}/>
       }
     </main>
   );
