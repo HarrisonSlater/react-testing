@@ -1,5 +1,5 @@
 
-export default function IngredientsList({ingredients, recipeCallback}) {
+export default function IngredientsList({ingredients, recipeCallback, ref}) {
     let ingredientsList = ingredients.map(i => <li key={i}>{i}</li>)
 
     return (
@@ -10,7 +10,7 @@ export default function IngredientsList({ingredients, recipeCallback}) {
                     <ul className="ingredients-list" aria-live="polite">{ingredientsList}</ul>
                     
                     { ingredientsList.length > 3 &&
-                    <div className="get-recipe-container">
+                    <div ref={ref} className="get-recipe-container">
                         <div>
                             <h3>Ready for a recipe?</h3>
                             <p>Generate a recipe from your list of ingredients.</p>

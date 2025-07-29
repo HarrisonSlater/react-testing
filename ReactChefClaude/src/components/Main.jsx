@@ -8,7 +8,14 @@ export default function Main() {
 
     let [ingredients, setIngredients] = React.useState([]);
     let [recipeShown, setRecipeShown] = React.useState(false);
-    let [recipeGenerated, setRecipeGenerated] = React.useState("Recipe not yet generated...");
+    let [recipeGenerated, setRecipeGenerated] = React.useState("");
+    const recipeSection = React.useRef(null)
+
+    React.useEffect(() => {
+      if (recipeGenerated != "" && recipeSection.current != null) {
+        recipeSection.current.scrollIntoView({behavior: "smooth"})
+      }
+    }, [recipeGenerated])
 
     function handleSubmit(formData) {
       let newIngredient = formData.get("ingredient")
@@ -36,7 +43,7 @@ export default function Main() {
         <button type="submit">Add ingredient</button>
       </form>
 
-      <IngredientsList ingredients={ingredients} recipeCallback={clickGetRecipe} />
+      <IngredientsList ref={recipeSection} ingredients={ingredients} recipeCallback={clickGetRecipe} />
 
       { recipeShown &&
         <ClaudeRecipe text={recipeGenerated}/>
