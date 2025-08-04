@@ -71,7 +71,6 @@ describe('Chef Gemini App', () => {
     
     await enterIngredient("Oregano")
 
-
     await enterIngredient("Basil")
 
     await enterIngredient("Beef Mince")
