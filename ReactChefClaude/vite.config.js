@@ -8,5 +8,9 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: './src/tests/setup.js', // assuming the test folder is in the root of our project
+  },
+  server: {
+    port: 4000,
+    host: '127.0.0.1'
   }
 })
