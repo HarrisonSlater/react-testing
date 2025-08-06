@@ -1,0 +1,20 @@
+.die {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4em;
+    font-weight:bold;
+    display: inline-flex;
+    margin: 8px;
+
+    background-color: white;
+    
+    filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.2));
+    border-radius: 10%;
+    border:none;
+
+    height: 50px;
+    width: 50px;
+
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
